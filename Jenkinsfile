@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh "ls"
-                    sh " docker compose -f docker-compose.yml -f docker-compose.dev.yml build"
+                    sh " docker-compose -f docker-compose.yml -f docker-compose.dev.yml build"
                     // sh "docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${params.DOCKER_IMAGE_TAG} ."
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    sh "docker compose -f docker-compose.yml -f docker-compose.dev.yml push"
+                    sh "docker-compose -f docker-compose.yml -f docker-compose.dev.yml push"
 
                     // sh "docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${params.DOCKER_IMAGE_TAG}"
                 }
