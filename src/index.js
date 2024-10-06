@@ -37,7 +37,7 @@ client.connect();
 
 app.get('/', (req, res) => {
     client.set('products', 'products...');
-    res.send('<h1>hello eman pp </h1>');
+    res.send('<h1>hello eman from AWS</h1>');
   });
   
   app.get('/data', async (req, res) => {
