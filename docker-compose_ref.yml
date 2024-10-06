@@ -1,0 +1,10 @@
+services:
+  node-app-img:
+    container_name: node-app-container
+    build: .
+    volumes:
+      - ./src:/app/src:ro
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./.env
